@@ -42,14 +42,14 @@ export function auth(req: NextRequest) {
   if (serverConfig.needCode && !serverConfig.codes.has(hashedCode) && !apiKey) {
     return {
       error: true,
-      msg: !accessCode ? "关注微信公众号：科技秀儿，发送消息“访问码”，即可获得最新访问码，用于登录" : "关注微信公众号：科技秀儿，发送消息“访问码”，即可获得最新访问码，用于登录",
+      msg: !accessCode ? "关注微信公众号：科技秀儿，发送消息“密码”，即可获得最新访问码，用于登录" : "关注微信公众号：科技秀儿，发送消息“访问码”，即可获得最新访问码，用于登录",
     };
   }
 
   if (serverConfig.hideUserApiKey && !!apiKey) {
     return {
       error: true,
-      msg: "关注微信公众号：科技秀儿，发送消息“访问码”，即可获得最新访问码，用于登录",
+      msg: "关注微信公众号：科技秀儿，发送消息“密码”，即可获得最新访问码，用于登录",
     };
   }
 
